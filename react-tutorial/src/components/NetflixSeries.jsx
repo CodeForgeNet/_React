@@ -77,14 +77,14 @@
 //! Props
 
 import SeriesData from "../api/SeriesData.json";
-import { SeriesCard } from "./Lists";
+import { SeriesCard } from "./SeriesCard";
 
 export const NetflixSeries = () => {
   return (
     <ul>
-      {SeriesData.map((curElem) => {
-        <SeriesCard key={curElem.id} curElem={curElem} />; //*props
-      })}
+      {SeriesData.map((curElem) => (
+        <SeriesCard key={curElem.id} data={curElem} /> //*props
+      ))}
     </ul>
   );
 };
