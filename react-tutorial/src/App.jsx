@@ -47,7 +47,7 @@
 //   );
 // };
 
-//TODO: REACT FRAGMENT
+//!: REACT FRAGMENT
 // import { Fragment } from "react";
 
 // export const App = () => {
@@ -92,7 +92,7 @@
 //   );
 // };
 
-//TODO: Dynamic values
+//!: Dynamic values
 //* 1. Variables
 //? You can embed any js variable within JSX by enclosing in it curly braces. The Value of the variable will be inserted into the DOM at the respective location.
 // export const App = () => {
@@ -185,89 +185,104 @@
 //   );
 // };
 
-//TODO: Conditional
+//! Conditional
+// export const App = () => {
+//   return (
+//     <>
+//       <NetflixSeries />
+//     </>
+//   );
+// };
+
+// const NetflixSeries = () => {
+//   const name = "Stranger things";
+//   const summary =
+//     "Stranger Things is an American television series created by the Duffer Brothers for Netflix. Produced by Monkey Massacre Productions and 21 Laps Entertainment, the first season was released on Netflix on July 15, 2016. The second and third seasons followed in October 2017 and July 2019, respectively, and the fourth season was released in two parts in May and July 2022. The fifth and final season of Stranger Things is expected to be released in 2025.";
+//   const returnGenre = () => {
+//     const genre = "Horror, SciFi";
+//     return genre;
+//   };
+
+//   let age = 25;
+
+//* 1. But this violet DRY (Do Not Repeat yourself)
+// if (age < 18) {
+//   return (
+//     <div>
+//       <div>
+//         <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
+//       </div>
+//       <h2>Name : {name}</h2>
+//       <h3>Rating : {8 + 1.1} </h3>
+//       <p>Genre: {returnGenre()}</p>
+//       <p>Summary : {summary}</p>
+//       <button> Not Available </button>
+//     </div>
+//   );
+// }
+
+//* 2. providing ternary operator in button
+// return (
+//   <div>
+//     <div>
+//       <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
+//     </div>
+//     <h2>Name : {name}</h2>
+//     <h3>Rating : {8 + 1.1} </h3>
+//     <p>Genre: {returnGenre()}</p>
+//     <p>Summary : {summary}</p>
+//     <button> {age >= 18 ? "Watch now" : "Not available"} </button>
+//   </div>
+// );
+
+//* 3. sometimes youmight have very complex IF conditions, for that there are some solutions.
+
+// let canWatch = "Not Available";
+// if (age >= 18) canWatch = "Watch";
+// return (
+//   <div>
+//     <div>
+//       <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
+//     </div>
+//     <h2>Name : {name}</h2>
+//     <h3>Rating : {8 + 1.1} </h3>
+//     <p>Genre: {returnGenre()}</p>
+//     <p>Summary : {summary}</p>
+//     <button> {canWatch} </button>
+//   </div>
+// );
+
+//* 4. Solutions can be better as it prevents cluttering of variables outside and encapsulate such logic inside a function.
+//* One another benefits is also that, you can also pass some dynamic values as function parameter.
+//   const canWatch = () => {
+//     if (age >= 18) return "Watch Now";
+//     return "Not available";
+//   };
+//   return (
+//     <div>
+//       <div>
+//         <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
+//       </div>
+//       <h2>Name : {name}</h2>
+//       <h3>Rating : {8 + 1.1} </h3>
+//       <p>Genre: {returnGenre()}</p>
+//       <p>Summary : {summary}</p>
+//       <button> {canWatch()} </button>
+//     </div>
+//   );
+// };
+
+//! Import Export
+//* 1. Named Import then it will be in curly braces.
+//* 2. Default Import then it will not be in curly braces.
+//* 3. You can also use both named and default import in the same file.
+
+import { NetflixSeries } from "./components/NetflixSeries";
+
 export const App = () => {
   return (
     <>
       <NetflixSeries />
     </>
-  );
-};
-
-const NetflixSeries = () => {
-  const name = "Stranger things";
-  const summary =
-    "Stranger Things is an American television series created by the Duffer Brothers for Netflix. Produced by Monkey Massacre Productions and 21 Laps Entertainment, the first season was released on Netflix on July 15, 2016. The second and third seasons followed in October 2017 and July 2019, respectively, and the fourth season was released in two parts in May and July 2022. The fifth and final season of Stranger Things is expected to be released in 2025.";
-  const returnGenre = () => {
-    const genre = "Horror, SciFi";
-    return genre;
-  };
-
-  let age = 25;
-
-  //* 1. But this violet DRY (Do Not Repeat yourself)
-  // if (age < 18) {
-  //   return (
-  //     <div>
-  //       <div>
-  //         <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
-  //       </div>
-  //       <h2>Name : {name}</h2>
-  //       <h3>Rating : {8 + 1.1} </h3>
-  //       <p>Genre: {returnGenre()}</p>
-  //       <p>Summary : {summary}</p>
-  //       <button> Not Available </button>
-  //     </div>
-  //   );
-  // }
-
-  //* 2. providing ternary operator in button
-  // return (
-  //   <div>
-  //     <div>
-  //       <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
-  //     </div>
-  //     <h2>Name : {name}</h2>
-  //     <h3>Rating : {8 + 1.1} </h3>
-  //     <p>Genre: {returnGenre()}</p>
-  //     <p>Summary : {summary}</p>
-  //     <button> {age >= 18 ? "Watch now" : "Not available"} </button>
-  //   </div>
-  // );
-
-  //* 3. sometimes youmight have very complex IF conditions, for that there are some solutions.
-
-  // let canWatch = "Not Available";
-  // if (age >= 18) canWatch = "Watch";
-  // return (
-  //   <div>
-  //     <div>
-  //       <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
-  //     </div>
-  //     <h2>Name : {name}</h2>
-  //     <h3>Rating : {8 + 1.1} </h3>
-  //     <p>Genre: {returnGenre()}</p>
-  //     <p>Summary : {summary}</p>
-  //     <button> {canWatch} </button>
-  //   </div>
-  // );
-
-  //* 4. Solutions can be better as it prevents cluttering of variables outside and encapsulate such logic inside a function.
-  //* One another benefits is also that, you can also pass some dynamic values as function parameter.
-  const canWatch = () => {
-    if (age >= 18) return "Watch Now";
-    return "Not available";
-  };
-  return (
-    <div>
-      <div>
-        <img src="st.jpg" alt="stranger thing" width="30%" height="30%" />
-      </div>
-      <h2>Name : {name}</h2>
-      <h3>Rating : {8 + 1.1} </h3>
-      <p>Genre: {returnGenre()}</p>
-      <p>Summary : {summary}</p>
-      <button> {canWatch()} </button>
-    </div>
   );
 };
