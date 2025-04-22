@@ -18,3 +18,7 @@ When importing name exprots, the import name must match the export names exactly
 Named imports must be enclosed in curly braces.
 
 #\* A component is a funciton which return jsx
+
+- Props
+
+* props is properties like HTML have attribute.

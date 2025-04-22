@@ -1,14 +1,5 @@
 [
-    {
-      "name": "Lovely Runner",
-      "id": "lovely-runner",
-      "img_url": "http://localhost:5173/images/lr.webp",
-      "rating": "9.8",
-      "description": "Im Sol travels back in time to prevent the tragic fate of her favorite star, Ryu Sun Jae.",
-      "cast": ["Kim Hye Yoon", "Byeon Woo Seok", "Song Geon Hee"],
-      "genre": ["Romantic Comedy", "Fantasy"],
-      "watch_url": "https://www.viki.com/tv/40466c-lovely-runner"
-    },
+    
     {
       "name": "Stranger Things",
       "id": "stranger-things",
@@ -68,5 +59,15 @@
       "cast": ["Kim Soo Hyun", "Kim Ji Won"],
       "genre": ["Drama", "Romance"],
       "watch_url": "https://www.viki.com/tv/23456789c-queen-of-tears"
+    },
+    {
+      "name": "Lovely Runner",
+      "id": "lovely-runner",
+      "img_url": "http://localhost:5173/images/lr.webp",
+      "rating": "9.8",
+      "description": "Im Sol travels back in time to prevent the tragic fate of her favorite star, Ryu Sun Jae.",
+      "cast": ["Kim Hye Yoon", "Byeon Woo Seok", "Song Geon Hee"],
+      "genre": ["Romantic Comedy", "Fantasy"],
+      "watch_url": "https://www.viki.com/tv/40466c-lovely-runner"
     }
   ]

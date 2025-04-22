@@ -40,32 +40,50 @@
 // };
 
 //! Loop
+// import SeriesData from "../api/SeriesData.json";
+
+// export const NetflixSeries = () => {
+//   return (
+//     <ul>
+//       {SeriesData.map((curElem) => {
+//         return (
+//           //   <li>
+//           //* or
+//           <li key={curElem.id}>
+//             <div>
+//               <img
+//                 src={curElem.img_url}
+//                 alt="stranger thing"
+//                 width="30%"
+//                 height="30%"
+//               />
+//             </div>
+//             <h2>Name : {curElem.name}</h2>
+//             <h3>Rating : {curElem.rating} </h3>
+//             <p>Genre: {curElem.genre}</p>
+//             <p>Cast : {curElem.cast} </p>
+//             <p>Summary : {curElem.description}</p>
+//             <a href={curElem.watch_url} target="_blank">
+//               <button>Watch Now</button>
+//             </a>
+//           </li>
+//         );
+//       })}
+//     </ul>
+//   );
+// };
+// export default NetflixSeries;
+
+//! Props
+
 import SeriesData from "../api/SeriesData.json";
+import { SeriesCard } from "./Lists";
 
 export const NetflixSeries = () => {
   return (
     <ul>
       {SeriesData.map((curElem) => {
-        return (
-          <li>
-            <div>
-              <img
-                src={curElem.img_url}
-                alt="stranger thing"
-                width="30%"
-                height="30%"
-              />
-            </div>
-            <h2>Name : {curElem.name}</h2>
-            <h3>Rating : {curElem.rating} </h3>
-            <p>Genre: {curElem.genre}</p>
-            <p>Cast : {curElem.cast} </p>
-            <p>Summary : {curElem.description}</p>
-            <a href={curElem.watch_url} target="_blank">
-              <button>Watch Now</button>
-            </a>
-          </li>
-        );
+        <SeriesCard key={curElem.id} curElem={curElem} />; //*props
       })}
     </ul>
   );
