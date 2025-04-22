@@ -1,3 +1,6 @@
+##Creating React app :-
+-bun create vite - npm install
+
 React does not render `false`, `null`,`undefined` or `NAN` in the DOM. These values when used in jsx will result in nothing being displayed.
 
 However `0` and empty Strings (`""`) are exceptions :
