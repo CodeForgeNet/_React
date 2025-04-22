@@ -277,7 +277,7 @@
 //* 2. Default Import then it will not be in curly braces.
 //* 3. You can also use both named and default import in the same file.
 
-import { NetflixSeries } from "./components/NetflixSeries";
+import NetflixSeries from "./components/NetflixSeries";
 
 export const App = () => {
   return (
