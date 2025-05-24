@@ -29,19 +29,34 @@ export const SeriesCard = ({ data }) => {
   // const { data } = props;
   const { img_url, name, rating, description, cast, genre, watch_url } = data;
 
+  const ratingClass = rating >= 8.5 ? "super-hit" : "average";
+
   return (
-    <li>
+    <li className="card">
       <div>
         <img src={img_url} alt="stranger thing" width="30%" height="30%" />
       </div>
-      <h2>Name : {name}</h2>
-      <h3>Rating : {rating} </h3>
-      <p>Genre: {genre}</p>
-      <p>Cast : {cast} </p>
-      <p>Summary : {description}</p>
-      <a href={watch_url} target="_blank">
-        <button>Watch Now</button>
-      </a>
+      <div className="card-content">
+        <h2>Name : {name}</h2>
+        <h3>
+          Rating :
+          {/* <span className={rating >= 8.5 ? "super-hit" : "average"}> */}
+          //? or
+          <span
+            // className={`ratingStyle ${rating >= 8.5 ? "super-hit" : "average"}`}
+            //? or
+            className={`ratingStyle ${ratingClass}`}
+          >
+            {rating}
+          </span>
+        </h3>
+        <p>Genre: {genre}</p>
+        <p>Cast : {cast} </p>
+        <p>Summary : {description}</p>
+        <a href={watch_url} target="_blank">
+          <button>Watch Now</button>
+        </a>
+      </div>
     </li>
   );
 };
